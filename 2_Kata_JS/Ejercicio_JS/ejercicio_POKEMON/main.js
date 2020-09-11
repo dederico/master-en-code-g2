@@ -158,3 +158,9 @@ for (var i = 0; i < pokemones.length; i++) {
   showCards(pokemones[i]);
   //   console.log(bands[i]);
 }
+
+// animar la imagen del modal a traves de un zoom
+function modalAnimation() {}
+var modalImg = document.getElementsByClassName("big-image");
+modalImg.className = "bigger-image";
+modalImg.onclick = modalAnimation;
