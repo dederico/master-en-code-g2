@@ -1,4 +1,4 @@
-var pokemones=[
+var pokemones = [
   {
     _id: "557a723880a20c9db3bc31c2",
     pkdx_id: 1,
