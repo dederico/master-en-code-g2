@@ -45,18 +45,57 @@ function showCards(pokemon) {
       console.log(pokemonType[i]);
 
       var modalBackground = document.getElementById("modal-pokemon");
-      if (pokemonType == "poison,grass") {
+      if (
+        pokemonType == "poison,grass" ||
+        pokemonType == "grass,psychic" ||
+        pokemonType == "grass"
+      ) {
         modalBackground.className = "modal bg-success";
-      } else if (pokemonType == "water") {
+      } else if (
+        pokemonType == "water" ||
+        pokemonType == "water,psychic" ||
+        pokemonType == "water,ice" ||
+        pokemonType == "ice,psychic" ||
+        pokemonType == "flying,water" ||
+        pokemonType == "rock,water"
+      ) {
         modalBackground.className = "modal bg-primary";
       } else if (
         pokemonType == "bug" ||
         pokemonType == "flying,bug" ||
-        pokemonType == "normal"
+        pokemonType == "normal" ||
+        pokemonType == "steel,electric"
       ) {
         modalBackground.className = "modal bg-secondary";
-      } else if (pokemonType == "electric") {
+      } else if (
+        pokemonType == "electric" ||
+        pokemonType == "flying,rock" ||
+        pokemonType == "flying,electric"
+      ) {
         modalBackground.className = "modal bg-warning";
+      } else if (pokemonType == "fire") {
+        modalBackground.className = "modal bg-danger";
+      } else if (
+        pokemonType == "poison,bug" ||
+        pokemonType == "bug,grass" ||
+        pokemonType == "dragon"
+      ) {
+        modalBackground.className = "modal bg-success";
+      } else if (pokemonType == "normal,flying") {
+        modalBackground.className = "modal bg-info";
+      } else if (pokemonType == "ground" || pokemonType == "ground,rock") {
+        modalBackground.className = "modal bg-warning";
+      } else if (
+        pokemonType == "fairy" ||
+        pokemonType == "psychic" ||
+        pokemonType == "poison,ghost"
+      ) {
+        modalBackground.className = "modal bg-dark";
+      } else if (
+        pokemonType == "normal,fairy" ||
+        pokemonType == "fairy,psychic"
+      ) {
+        modalBackground.className = "modal bg-dark";
       } else {
         modalBackground.className = "modal bg-danger";
       }
