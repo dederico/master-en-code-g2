@@ -30,3 +30,7 @@ if (
     "Escribe tu opcion en minusculas, las opciones son piedra, papel, o tijeras"
   );
 }
+var j1 = "papel";
+var j2 = "piedra";
+
+console.log(j1 === j2);
