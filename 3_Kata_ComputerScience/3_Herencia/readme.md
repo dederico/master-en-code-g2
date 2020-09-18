@@ -1,3 +1,13 @@
+Para los siguientes ejercicios,
+
+A) Cree un archivo llamado index.html.
+A.1) en dicho archivo incluyo un <script src="....">
+mismo que debera ser modificado segun sea el archivo de .js que se desee abrir.
+
+B) Se modifica la fuente "src", se abre el index.html y se puede ver en la consola el ejercicio.
+
+C) Instrucciones ----->
+
 1.- Crea una superclase llamada Electrodoméstico con las
 siguientes características:
 a. Sus atributos son precio, color, consumoEnergetico
@@ -33,3 +43,5 @@ mientras que el maestro de música tiene un atributo “edad”
 también guardando un valor numérico.
 
 /// LISTO //////////////////////////////////
+
+D) Terminado.
