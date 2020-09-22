@@ -54,7 +54,7 @@ class Cine {
     } else {
       console.log(`${Largometraje.titulo}` + " es una Pelicula");
     }
-    return `${this.nombre}` + " se esta reproduciendo.";
+    return `${Largometraje.titulo}` + " se esta reproduciendo.";
   }
 }
 
