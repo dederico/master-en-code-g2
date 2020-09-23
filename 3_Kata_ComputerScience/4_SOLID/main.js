@@ -62,3 +62,4 @@ let Cinepolis = new Cine("Cinepolis", "Monterrey");
 
 Cinepolis.reproducir(ToyStory);
 console.log(Cinepolis.reproducir(halloween));
+console.log(Cinepolis.reproducir(DontFKillCats));
