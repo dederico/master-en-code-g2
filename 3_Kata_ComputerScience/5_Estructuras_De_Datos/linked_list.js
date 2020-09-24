@@ -18,7 +18,12 @@ class Node {
 
 // Las listas tienen 2 comportamientos escenciales,
 // insertar (add)
+// - al principio
+// - al final
+// - en medio
 // borrar (delete)
+// busqueda o obtener (indice)
+
 class LinkedList {
   // estas son las propiedades de mi lista
   constructor() {
@@ -39,8 +44,6 @@ class LinkedList {
       // while: mientras (condicion: se cumpla la condicion) {hace esto}
       while (currentNode.next) {
         // verifico si next tiene un nodo
-        console.log(data);
-        console.log(currentNode);
         currentNode = currentNode.next; // sustitutyo el nodo que vive en next, a mi nodo actual
       }
       // cuando next sea nulo, entonces sale del while y continua con el resto del codigo
@@ -49,7 +52,24 @@ class LinkedList {
 
     this.length++;
   }
-  addAtStart() {}
+  // TODO: addStart: Implementacion
+
+  addAtStart(data) {
+    // Hay que crear un nodo
+    const node = new Node(data);
+    // verificar si la lista esta vacia
+    // this.head = null; falsy -> this.head -> false
+    // !falso === true
+    // (this.head === null) true
+    // (this.head !== null) false
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+    this.length++;
+  }
 
   get(index) {
     // 0
@@ -84,10 +104,11 @@ class LinkedList {
 }
 const listaDeAlumnos = new LinkedList();
 
-listaDeAlumnos.add("Cesar");
-listaDeAlumnos.add("Juan Camilo");
-listaDeAlumnos.add("Marlon");
-listaDeAlumnos.add("Ulma");
-listaDeAlumnos.add("Margarito");
+listaDeAlumnos.addAtEnd("Cesar");
+listaDeAlumnos.addAtEnd("Juan Camilo");
+listaDeAlumnos.addAtEnd("Marlon");
+listaDeAlumnos.addAtEnd("Ulma");
+listaDeAlumnos.addAtEnd("Margarito");
+// listaDeAlumnos.addAtStart("Federico");
 
 console.log(listaDeAlumnos);
