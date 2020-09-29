@@ -85,5 +85,6 @@ class Stack {
   }
   peek() {
     // peek solamente trae el ultimo elemento que se agrego
+    return this.storage[this.count - 1];
   }
 }
