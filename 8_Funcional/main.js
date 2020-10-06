@@ -39,3 +39,78 @@ sensei.nombre = "Mali";
 sensei.programa = " Cinta Roja";
 sensei.equipo.modelo = "MacBook";
 console.log(sensei);
+
+// Subir suledo con Programacion Orientada a Objetos
+class Empleado {
+  constructor(nomnbre, salario) {
+    this.nombre = nombre;
+    this.salario = salario;
+  }
+  cambiarSalario(aumento) {
+    this.salario = salario + aumento;
+  }
+  descripcion() {
+    return `El trabajador, ... `;
+  }
+}
+const empleados = [
+  ["Luis Torres", 25000],
+  ["Maria Arriaga", 42000],
+];
+
+const copiaEmpleados = (empleados) => {
+  let newEmpleados = new Array();
+  empleados.forEach((empleado) => newEmpleados.push([...empleado]));
+  return newEmpleados;
+};
+console.log(copiaEmpleados(empleados));
+
+const cambiarSalario = (empleados, cantidad) => {
+  let copEmpleados = copiaEmpleados(empleados);
+  copEmpleados.forEach((empleado) => {
+    empleado[1] = empleado[1] + cantidad;
+  });
+  return copEmpleados;
+};
+console.log(cambiarSalario(empleados, 10000));
+
+const empleadosFelices = cambiarSalario(empleados, 10000);
+//console.log(empleadosFelices);
+
+// ---------------------------------------
+// Metodos de los Arrays
+//                0          1               2           3          4
+
+// FOR EACH
+const paises = ["Mexico", "Costa Rica", "Colombia", "El Salvador", "Peru"];
+let x = paises.forEach((pais, index, array) => {
+  //console.log("Elemento actual -> " + pais);
+  //console.log("Indice -> " + index);
+  //console.log(array);
+  return pais; // devuelve undefined
+});
+
+// MAP
+// map -> devuelve un arreglo
+const numbers = [1, 5, 10, 15];
+const doubles = numbers.map((number, index, array) => number * 2);
+// console.log(doubles);
+
+// FILTER
+// .filter() devuelve un arreglo con los elementos que cumplen la condicion dada de retorno
+const paisesFiltrados = paises.filter((pais, index, array) => pais.length > 6);
+console.log(paisesFiltrados);
+
+// SORT
+const frutas = ["manzana", "pera", "kiwi", "banana"];
+frutasOrdenadas = frutas.sort();
+// como ordenamos numeros????
+
+console.log(frutasOrdenadas);
+
+// REDUCE
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(numbers.reduce(reducer, 5));
+
+const sumatoria = numbers.reduce((a, b) => a + b, 5);
+console.log(sumatoria);
