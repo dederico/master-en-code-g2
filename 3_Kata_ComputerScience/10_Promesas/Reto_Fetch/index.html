@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reto Fetch</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- User CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar sticky-top text-white" style="background-color: #0d316c">
+      Chuck Norris Jokes API
+    </nav>
+    <main class="container">
+      <div class="input-group mb-3">
+        <form class="jokeForm" id="jokeForm">
+          <label for="fistName">First Name:</label>
+          <input type="text" id="firstName" placeholder="Chuck" />
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" placeholder="Norris" />
+
+        <div class="ChuckBtn">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            id="chuckBtn"
+            onclick="buscaBroma()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+        </form>
+
+      <aside class="row container">
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/51IY4ohvfUL._AC_.jpg"
+            class="card-img-top"
+            alt="Chuck and Guns"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Chuck Approves</h5>
+            <p id="card-text" class="card-text">
+              <!-- Here is where the joke -fetched- from the API should appear. -->
+            </p>
+     
+          </div>
+        </div>
+      </aside>
+    </main>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- User Script Logic -->
+    <script src="main.js"></script>
+  </body>
+</html>
