@@ -21,7 +21,7 @@ const multiple = () => {
   for (let i = 0; i < 1000; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
       sum += i;
-      console.log(sum);
+      // console.log(sum);
       // console.log(typeof i);
       // let num = i.toString();
       // console.log(typeof num);
