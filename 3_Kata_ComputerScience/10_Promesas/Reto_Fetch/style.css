@@ -27,3 +27,23 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* The animation code */
+@keyframes chuck {
+  from {
+    background-color: none;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+/* The element to apply the animation to */
+img {
+  background-color: red;
+  animation-name: chuck;
+  animation-duration: 4s;
+}
+.bullets {
+  background-color: yellow;
+}
