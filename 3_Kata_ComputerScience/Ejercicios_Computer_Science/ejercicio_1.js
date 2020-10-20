@@ -21,7 +21,7 @@ miFuncion = (pila, num) => {
   console.log(num);
   console.log(pila.length);
   if (num <= pila.length) {
-    for (let index = 0; index < pila.length; index++) {
+    for (let index = 0; index < num; index++) {
       const element = pila[index];
       console.log(element + " cool");
     }
@@ -33,4 +33,8 @@ miFuncion(["gordo", "panzon", "gato"], 3);
 miFuncion(
   ["Susana", "Fernando", "Francisco", "Juan", "Gabriel", "Federico"],
   9
+);
+miFuncion(
+  ["manzana", "cebolla", "apio", "naranja", "papya", "sandia", "melon"],
+  4
 );
