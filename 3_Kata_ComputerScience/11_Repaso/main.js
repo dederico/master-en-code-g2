@@ -45,7 +45,7 @@ const despuesDeQuinientos = () => {
 };
 
 const despuesDeDoscientos = () => {
-  console.log("Tercer timeout");
+  console.log("Tercer timeout!");
 };
 
 console.log("Inicio");
