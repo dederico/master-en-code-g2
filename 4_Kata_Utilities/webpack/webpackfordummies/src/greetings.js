@@ -1,7 +1,7 @@
 const greeting = (name) =>
   `Hola ${name} este es un saludo, bienvenido a ECMA6.`;
 
-module.exports = greeting;
+//module.exports = greeting;
 
 // const valorObtenidoDelArchivo = require('ruta/del/archivo')
 // common JS
