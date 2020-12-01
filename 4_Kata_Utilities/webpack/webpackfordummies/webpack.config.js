@@ -1,5 +1,6 @@
 // NODE commonJS
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   module: {
     rules: [
@@ -14,12 +15,39 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.js$/, // va a
+        exclude: /node_modules/, // significa que no va a buscar en la carpeta de node_modules
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.(png|jpg|svg|jpeg|gif)$/, // va a buscar archivos con esa terminacion
+        use: ["file-loader"],
+      },
+      {
+        test: /\.scss/,
+        use: [
+          "style-loader",
+          "css-loader", // estilos en linea de css
+          "sass-loader", //
+          //
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css", // esto es para manejar muchas lineas de codigo
     }),
   ],
 };
