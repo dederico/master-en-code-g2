@@ -1,0 +1,14 @@
+{
+  "name": "webpack_clone",
+  "version": "1.0.0",
+  "description": "Pokedex basado en el proyecto de Manny(onemargaro)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pokemon"
+  ],
+  "author": "gen2",
+  "license": "MIT"
+}
