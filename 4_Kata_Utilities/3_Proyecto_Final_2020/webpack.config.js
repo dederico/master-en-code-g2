@@ -6,7 +6,7 @@ module.exports = {
     rules: [
       // las reglas van a cargar los LOADERS para que webpack haga lo que necesitamos
       {
-        test: /\.html/,
+        test: /\.html/, //REGEX busca todos los archivos que terminan en html
         use: [
           // lo que encontre, que vamos a hacer con ello
           {
@@ -16,7 +16,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/, // va a
+        test: /\.js$/, // va a buscar todos los archivos de JS
         exclude: /node_modules/, // significa que no va a buscar en la carpeta de node_modules
         use: {
           loader: "babel-loader",
@@ -33,8 +33,10 @@ module.exports = {
         test: /\.scss/,
         use: [
           "style-loader",
-          "css-loader", // estilos en linea de css
-          "sass-loader", //
+          "css-loader",
+          "postcss-loader", // estilos en linea de css
+          "sass-loader",
+          //
           //
         ],
       },
