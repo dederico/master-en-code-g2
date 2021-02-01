@@ -1,0 +1,18 @@
+.counter-container{
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+    
+}
+
+.boton-sumar{
+    background-color: #282c34;
+    color: turquoise;
+    border-color: white;
+}
+
+.boton-restar{
+    background-color: #282c34;
+    color: red;
+    border-color: white;
+}
