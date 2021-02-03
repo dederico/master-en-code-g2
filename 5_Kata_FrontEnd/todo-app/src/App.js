@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Todo App      <HolaMundo />
-
+        Todo App
+         <HolaMundo texto="Hola desde App.js" />
       </header>
     </div>
   );
