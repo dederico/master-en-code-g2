@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 function HolaMundo(props) {
     //Para manejar el estado en una funcion, utilizamos el HOOK useState
-    const [texto, setTexto] = useState('Hola desde el componente!')
+    const [texto, setTexto] = useState('Hola desde el componente!');
     const [edad, setEdad] = useState(0);
-    console.log('🤟🏻', props)
+    console.log('🤟🏻', props);
     return (
         <>
             <h1>Componente HolaMundo funcional</h1>
