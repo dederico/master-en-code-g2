@@ -6,6 +6,7 @@ import {
     Link
 } from "react-router-dom";
 import './App.css';
+import Routes from './Routes'
 
 export default function App() {
     return (
@@ -15,6 +16,10 @@ export default function App() {
                 <Link className="navbar_link" to="/ejemplo">Ejemplo</Link>
                 <Link className="navbar_link" to="/peticiones">Peticiones</Link>
             </nav>
+            <Switch>
+                <Routes />
+
+            </Switch>
         </Router>
     )
 }
