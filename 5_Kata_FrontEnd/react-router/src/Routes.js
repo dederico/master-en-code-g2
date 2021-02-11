@@ -3,7 +3,7 @@ import Peticiones from './components/Peticiones'
 
 function Routes() {
     return (
-        <>
+        <div className="container">
             <Route exact path="/">
                 <h2>Inicio</h2>
             </Route>
@@ -13,7 +13,7 @@ function Routes() {
             <Route exact path="/peticiones">
                 <Peticiones />
             </Route>
-        </>
+        </div>
     )
 }
 

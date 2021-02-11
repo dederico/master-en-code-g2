@@ -2,10 +2,9 @@ import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
     Link
 } from "react-router-dom";
-import './App.css';
+import './App.scss';
 import Routes from './Routes'
 
 export default function App() {

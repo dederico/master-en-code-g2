@@ -23,14 +23,14 @@ export default function Peticiones() {
             console.log("Hola desde el useEffect!!!")
         }, [])
     return (
-        <>
-            <h1>Peticiones</h1>
-            <h2>useEffect</h2>
+        <div className="container">
+            <h2>Peticiones</h2>
+            <h3>useEffect</h3>
             <input
                 type="texto"
                 onChange={(e) => setTexto(e.target.value)}></input>
             <br />
             <span>{texto}</span>
-        </>
+        </div>
     )
 }
