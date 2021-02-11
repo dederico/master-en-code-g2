@@ -41,23 +41,17 @@ export default function Peticiones() {
     //         console.log("Hola desde el useEffect!!!")
     //     }, [])
     return (
-        <div className="container">
+        < div className="container" >
             <h1>Peticiones</h1>
             <h2>useEffect</h2>
             <h3>- Taco Fancy API -</h3>
-            <TacoComponent taco={taco} />
-            {/* <input
-                type="texto"
-                onChange={(e) => setTexto(e.target.value)}></input>
-            <br />
-            <span>{texto}</span> */}
-            {/* <p>{
 
+            {
                 taco.condiment
-                    ? taco.condiment.name
-                    : 'Estamos eligiendo tu taco'
+                    ? <TacoComponent taco={taco} />
+                    : <span>Estamos eligiendo el taco ideal para ti </span>
+            }
 
-            }</p> */}
         </div>
     )
 }
