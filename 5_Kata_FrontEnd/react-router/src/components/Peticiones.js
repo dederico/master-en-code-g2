@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react';
-
+import TacoComponent from './TacoComponent'
 
 export default function Peticiones() {
     const [taco, setTaco] = useState({});
@@ -22,16 +22,18 @@ export default function Peticiones() {
 
     const tacoAPI = 'http://taco-randomizer.herokuapp.com/random/';
 
-    useEffect(() => {
-        // Hacer la peticion a la API
-        axios.get(tacoAPI)
-            .then((response) => {
-                setTaco(response.data)
-            })
+    async function getTaco() {
+        try {
+            const response = await axios.get(tacoAPI);
+            setTaco(response.data);
+        } catch (error) {
+            alert("ocurrio un error");
+        }
+    }
 
-            .catch((err) => console.log(err));
-        // Con la respuesta, modificar el estado de mi componente 
-    }, [])
+    useEffect(() => {
+        setTimeout(getTaco, 1500);
+    }, []);
 
 
     // useEffect(
@@ -43,18 +45,19 @@ export default function Peticiones() {
             <h1>Peticiones</h1>
             <h2>useEffect</h2>
             <h3>- Taco Fancy API -</h3>
+            <TacoComponent taco={taco} />
             {/* <input
                 type="texto"
                 onChange={(e) => setTexto(e.target.value)}></input>
             <br />
             <span>{texto}</span> */}
-            <p>{
+            {/* <p>{
 
                 taco.condiment
                     ? taco.condiment.name
                     : 'Estamos eligiendo tu taco'
 
-            }</p>
+            }</p> */}
         </div>
     )
 }
