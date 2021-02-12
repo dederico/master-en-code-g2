@@ -19,5 +19,5 @@ function Autor() {
 
 }
 
-export default Autor
+export default Autor;
 
