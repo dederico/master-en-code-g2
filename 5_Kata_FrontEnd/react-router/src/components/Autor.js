@@ -1,9 +1,10 @@
+import React from 'react';
 import { useParams } from 'react-router-dom';
 
 
 function Autor() {
     const { idAutor } = useParams();
-    const params = useParams();
+    // const params = useParams();
 
     console.log("🤯", idAutor)
 
