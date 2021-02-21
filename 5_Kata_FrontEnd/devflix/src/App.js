@@ -1,35 +1,27 @@
-import logo from './assets/1x/movie.png';
+import React, { useState } from 'react';
+// import Landing from './components/Landing'
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import Routes from './Routes'
+// Components
 import NavbarComponent from './components/NavbarComponent'
-
+// Styles
 import './App.css';
 
 function App() {
+  const [shows, setShows] = useState([])
   return (
     <>
-      <NavbarComponent />
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <br />
-          <br />
-          <input
-            className="input-landing"
-            placeholder="What are you looking for?"
-          >
-          </input>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-        </a>
-        </header>
-      </div>
+      <Router>
+        <NavbarComponent setShows={setShows} />
+        <Switch>
+          <main className="container mt-4">
+            <Routes shows={shows} />
+          </main>
+
+        </Switch>
+      </Router>
+
+
     </>
   );
 }
