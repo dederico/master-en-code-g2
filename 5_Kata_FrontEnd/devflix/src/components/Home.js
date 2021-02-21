@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ShowCard from './ShowCard';
 
 const Home = ({ shows }) => {
     console.log('En Home:', shows);
@@ -9,7 +10,14 @@ const Home = ({ shows }) => {
     // show.summary
     const showResults = () => {
         return shows.map(showObject => {
-            return (<h3>{showObject.show.name}</h3>)
+            const { show } = showObject
+
+            return <ShowCard
+                key={show.id}
+                id={show.id}
+                image={show.image.medium}
+                summary={show.summary}
+                name={show.name} />
         });
 
 

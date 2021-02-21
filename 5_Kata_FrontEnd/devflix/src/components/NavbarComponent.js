@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import PropTypes from 'prop-types';
 import devflix from '../assets/1x/devflix.png';
 import { Link } from 'react-router-dom';
