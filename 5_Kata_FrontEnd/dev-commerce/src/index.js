@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from './Routes';
+import '/Users/JL/Desktop/trabajo/DevF/Master-Coding/5_Kata_FrontEnd/dev-commerce/node_modules/bootstrap/scss/bootstrap.scss'; // cuando usamos sass
+import '/Users/JL/Desktop/trabajo/DevF/Master-Coding/5_Kata_FrontEnd/dev-commerce/node_modules/bootstrap/dist/css/bootstrap.min.css' // cuando usamos solo css
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routes />
   </React.StrictMode>,
   document.getElementById('root')
 );
