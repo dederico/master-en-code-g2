@@ -26,17 +26,17 @@ function SignUp() {
                 <label for="exampleInputPassword1" className="form-label">Password</label>
                 <input type="password" className="form-control" id="exampleInputPassword1" />
             </div>
-            <div className="mb-3 form-check container" style={{
-                'margin-left': '11.5%'
-            }}>
-                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                <label className="form-check-label" for="exampleCheck1">Check me out</label>
+
+            <div className="mb-3 container">
+                <label for="confirmPassword" className="form-label">Confirm your Password</label>
+                <input type="confirmPassword" className="form-control" id="confirmPassword" />
             </div>
+
             <button type="submit" className="btn btn-primary" style={{
                 'max-width': '200px',
                 'margin-left': '45px'
             }}>Submit</button>
-        </form>
+        </form >
 
     )
 }

@@ -17,17 +17,8 @@ export default function Routes() {
             <Navbar />
             <Switch>
                 <Route exact path='/' component={Home} />
-            </Switch>
-
-            <Switch>
                 <Route exact path='/login' component={Login} />
-            </Switch>
-
-            <Switch>
                 <Route exact path='/signup' component={SignUp} />
-            </Switch>
-
-            <Switch>
                 <Route exact path='/profile' component={Profile} />
             </Switch>
 

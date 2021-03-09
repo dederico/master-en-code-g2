@@ -9,9 +9,10 @@ function Navbar() {
                     <Link className="navbar-brand" to="/">
                         <img src={logo} alt="" width="90" className="d-inline-block align-top" />
                     </Link>
-                    <Link className="navbar-brand" to="/profile">Profile</Link>
+
                     <Link className="navbar-brand" to="/login">Login</Link>
                     <Link className="navbar-brand" to="/signup">Sing-Up</Link>
+                    <Link className="navbar-brand" to="/profile">Profile</Link>
 
                 </div>
             </nav>

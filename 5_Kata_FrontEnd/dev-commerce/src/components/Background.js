@@ -6,10 +6,13 @@ function Background() {
         <div className="bck-img"
             style={{
                 background: `url(${background})`,
-                height: '100vh'
+                height: '100vh',
+                backgroundRepeat: 'no-repeat',
+                // marginLeft: '25vw',
+                backgroundSize: 'cover'
             }}
         >
-        </div>
+        </div >
 
     )
 }
