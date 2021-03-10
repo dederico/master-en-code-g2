@@ -1,6 +1,7 @@
 import ClickCounter from './ClickCounter';
+import WithCounter from '../../hocs/WithCounter'
 
-export default ClickCounter;
+export default WithCounter(ClickCounter);
 
 // Forma 2
 // export {default} from './ClickCounter';
