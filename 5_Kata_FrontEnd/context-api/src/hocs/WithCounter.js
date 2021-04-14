@@ -5,7 +5,7 @@ const WithCounter = (WrappedComponent) => {
         const [count, setCount] = useState(0);
 
         const incrementCounter = () => {
-            return setCount(count + 1)
+            return setCount(count + 1);
         }
 
         return <WrappedComponent
@@ -14,4 +14,5 @@ const WithCounter = (WrappedComponent) => {
             {...props} />
     }
 }
+
 export default WithCounter;

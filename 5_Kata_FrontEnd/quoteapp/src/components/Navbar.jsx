@@ -13,7 +13,7 @@ export default function Navbar() {
                     <div className="navbar-nav">
                         <Link className="nav-link" to="/login">Inicio de sesión</Link>
                         <Link className="nav-link" to="/signup">Registro</Link>
-                        <Link className="nav-link" to="#">Nombre Usuario</Link>
+                        <Link className="nav-link" to="/profile">Nombre Usuario</Link>
                         <Link className="nav-link" to="#">Cerrar Sesión</Link>
                     </div>
                 </div>

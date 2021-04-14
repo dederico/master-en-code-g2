@@ -1,5 +1,8 @@
 const ContextApp = (props) => {
-    const { theme, toggleTheme } = props;
+    const [
+        { name, lastName, theme },
+        { toggleTheme }
+    ] = props.themeState;
 
     return (
         <article style={{
@@ -14,7 +17,7 @@ const ContextApp = (props) => {
         }}>
             <h2 style={{
                 color: theme.color,
-            }}>Context App</h2>
+            }}>{name} {lastName}</h2>
             <button
                 onClick={toggleTheme}
                 type="button">
