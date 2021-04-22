@@ -18,6 +18,7 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
+  // Contiene una copia exacta o tan exacta como se necesite
 
   staging: {
     client: 'postgresql',
@@ -36,6 +37,7 @@ module.exports = {
     }
   },
 
+  // Los datos reales de tu negocio
   production: {
     client: 'postgresql',
     connection: {

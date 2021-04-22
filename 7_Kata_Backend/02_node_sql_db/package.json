@@ -9,10 +9,10 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "staging": "nodemon index.js",
-    "production": "node index.js"
+    "dev": "NODE_ENV=development nodemon index.js",
+    "staging": "NODE_ENV=staging nodemon index.js",
+    "production": "NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

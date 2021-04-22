@@ -19,4 +19,6 @@ app.get('/', (req, res) => res.status(200).json({ message: "hola mundo" }));
 // Rental
 app.use('/api/v1', require('./routers'));
 
+console.log(process.env.NODE_ENV);
+
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
