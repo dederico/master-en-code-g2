@@ -3,9 +3,21 @@ const router = express.Router();
 
 const { RentalController } = require('../controllers');
 
+// Create
+router.post('/rentals', RentalController.create);
 
-router.post('/rental', RentalController.create);
+// Read All
+router.get('/rentals', RentalController.findAll);
 
-router.get('/rental', (req, res) => res.status(200).json({ rentals: [] }));
+// Read One
+router.get('/rentals/:idRental', RentalController.findOneById);
+
+// Update One
+router.patch('/rentals/:idRental', RentalController.updateOneById);
+
+// Delete One (borrado lógico)
+router.delete('/rentals/:idRental', RentalController.deleteOneById);
+
+// Destroy One (borrado físico)
 
 module.exports = router;
