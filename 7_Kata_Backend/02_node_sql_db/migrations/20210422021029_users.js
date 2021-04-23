@@ -1,4 +1,3 @@
-
 exports.up = function (knex) {
     // Crea una tabla con el nombre del primer argumento, si es que no existe esa tabla
     return knex.schema.createTableIfNotExists('users', (table) => {
@@ -8,8 +7,8 @@ exports.up = function (knex) {
         table.string('first_name').notNullable();
         table.string('last_name').notNullable();
         table.string('email').notNullable();
-        table.string('phone');
-        table.text('biography');
+        table.string('phone').notNullable();
+        table.string('biography');
         // is_active -> borrado lógico
         table.boolean('is_active').notNullable().defaultTo(true);
         table.timestamp('created_at').defaultTo(knex.fn.now());

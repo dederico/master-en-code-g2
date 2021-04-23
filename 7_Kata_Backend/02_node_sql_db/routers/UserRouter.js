@@ -10,13 +10,13 @@ router.post('/users', UserController.create);
 router.get('/users', UserController.findAll);
 
 // Read One
-router.get('/users/:idUsers', UserController.findOneById);
+router.get('/users/:idUser', UserController.findOneById);
 
 // Update One
-router.patch('/users/:idUsers', UserController.updateOneById);
+router.patch('/users/:idUser', UserController.updateOneById);
 
 // Delete One (borrado lógico)
-router.delete('/users/:idUsers', UserController.deleteOneById);
+router.delete('/users/:idUser', UserController.deleteOneById);
 
 // Destroy One (borrado físico)
 

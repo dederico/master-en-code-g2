@@ -3,5 +3,5 @@ const UserController = require('./UserController');
 
 module.exports = {
     RentalController,
-    UserController
+    UserController,
 }

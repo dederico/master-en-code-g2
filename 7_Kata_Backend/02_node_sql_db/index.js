@@ -16,7 +16,6 @@ body
 
 app.get('/', (req, res) => res.status(200).json({ message: "hola mundo" }));
 
-// Rental
 app.use('/api/v1', require('./routers'));
 
 console.log('Entorno', process.env.NODE_ENV);

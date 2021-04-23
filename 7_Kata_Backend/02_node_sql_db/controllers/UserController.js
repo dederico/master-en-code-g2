@@ -3,10 +3,12 @@ const { User } = require('../models');
 const create = (req, res) => {
     // const newRental = req.body;
     const newUser = {
+
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
         phone: req.body.phone,
+        biography: req.body.biography,
 
     }
 
