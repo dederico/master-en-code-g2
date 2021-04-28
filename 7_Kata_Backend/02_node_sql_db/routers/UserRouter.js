@@ -20,4 +20,8 @@ router.delete('/users/:idUser', UserController.deleteOneById);
 
 // Destroy One (borrado físico)
 
+// Agregar un endpoint para hacer login
+router.post('/login', UserController.login);
+
+
 module.exports = router;

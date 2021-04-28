@@ -18,6 +18,9 @@ const create = async (req, res) => {
     // }
 
     // utilizando knex, insertar el objeto en la base datos
+
+
+
     return User
         .create(req.body)
         .then((resDB) => {
@@ -101,10 +104,29 @@ const deleteOneById = async (req, res) => {
     }
 }
 
+const login = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        // 1) Esta registrado?
+        const [user] = await User.find(
+            { email: email },
+            ['user_id', 'first_name', 'last_name', 'email', 'password'],
+        );
+        if (!user) return res.status(404).json({ message: 'user not found' })
+        return res.status(200).json({ user: user })
+        // 2) La contrasena esta bien?
+
+        // 3) generar un JWT
+    } catch (error) {
+        return res.status(500).send({ error });
+    }
+}
+
 module.exports = {
     create,
     findAll,
     findOneById,
     updateOneById,
     deleteOneById,
+    login,
 }

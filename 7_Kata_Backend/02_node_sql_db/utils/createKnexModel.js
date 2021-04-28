@@ -8,7 +8,13 @@ function createKnexModel(knex, tableName, tableColumns, tableId) {
             .select(tableColumns)
             .from(tableName);
     }
-
+    // query -> {email:'fede@gmail.com'}
+    const find = (query, columns) => {
+        return knex
+            .select(columns)
+            .from(tableName)
+            .where(query);
+    }
     const findOneById = (id) => {
         return knex
             .select(tableColumns)
@@ -32,6 +38,7 @@ function createKnexModel(knex, tableName, tableColumns, tableId) {
     }
 
     return {
+        find,
         create,
         findAll,
         findOneById,

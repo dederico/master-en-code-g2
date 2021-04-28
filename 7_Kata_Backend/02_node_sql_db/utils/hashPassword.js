@@ -20,6 +20,9 @@ module.exports = (password) => {
                 if (err) reject(err);
                 resolve(hash);
             });
+            bcrypt.compare(password, hash, function (err, result) {
+                // returns result
+            });
         })
     })
 }
