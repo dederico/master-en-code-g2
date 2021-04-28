@@ -3,18 +3,21 @@ function createKnexModel(knex, tableName, tableColumns, tableId) {
         return knex(tableName).insert(body);
     }
 
-    const findAll = () => {
-        return knex
-            .select(tableColumns)
-            .from(tableName);
-    }
-    // query -> {email:'fede@gmail.com'}
+    // query -> { email: 'randy@gmail.com'}
     const find = (query, columns) => {
         return knex
             .select(columns)
             .from(tableName)
-            .where(query);
+            .where({ ...query, is_active: true });
     }
+
+    const findAll = () => {
+        return knex
+            .select(tableColumns)
+            .from(tableName)
+            .where({ is_active: true });
+    }
+
     const findOneById = (id) => {
         return knex
             .select(tableColumns)
@@ -38,8 +41,8 @@ function createKnexModel(knex, tableName, tableColumns, tableId) {
     }
 
     return {
-        find,
         create,
+        find,
         findAll,
         findOneById,
         updateOneById,

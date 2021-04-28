@@ -1,32 +1,19 @@
 const { User } = require('../models');
-const hashPassword = require('../utils/hashPassword');
+const Utils = require('../utils');
 
 const create = async (req, res) => {
     if (req.body.password) {
-        const hash = await hashPassword(req.body.password);
+        const hash = await Utils.hashPassword(req.body.password);
         req.body.password = hash;
     }
-    // const newRental = req.body;
-    // const newUser = {
-
-    //     first_name: req.body.first_name,
-    //     last_name: req.body.last_name,
-    //     email: req.body.email,
-    //     phone: req.body.phone,
-    //     biography: req.body.biography,
-
-    // }
 
     // utilizando knex, insertar el objeto en la base datos
-
-
-
     return User
         .create(req.body)
         .then((resDB) => {
             return res.status(200).json({
                 message: 'user created',
-                rental: resDB,
+                user: resDB,
             })
         })
         .catch((err) => {
@@ -57,7 +44,7 @@ const findOneById = async (req, res) => {
 
     try {
         const response = await User.findOneById(idUser);
-        if (response.length === 0) return res.status(404).json({ message: "provided user id doesn't exist" });
+        if (response.length === 0) return res.status(404).json({ message: "provided user doesn't exist" });
         return res.status(200).json({
             message: 'Successfully obtained user by id',
             response,
@@ -77,7 +64,7 @@ const updateOneById = async (req, res) => {
     try {
         const response = await User.updateOneById(idUser, req.body);
         return res.status(200).json({
-            message: 'Successfully updated rental by id',
+            message: 'Successfully updated user by id',
             response,
         });
 
@@ -93,7 +80,7 @@ const deleteOneById = async (req, res) => {
     const { idUser } = req.params;
 
     try {
-        await User.deleteOneById(idRental);
+        await User.deleteOneById(idUser);
         return res.status(204).json();
 
     } catch (error) {
@@ -106,21 +93,27 @@ const deleteOneById = async (req, res) => {
 
 const login = async (req, res) => {
     const { email, password } = req.body;
+
     try {
-        // 1) Esta registrado?
+        // 1) ¿Está registrado el usuario?
         const [user] = await User.find(
             { email: email },
             ['user_id', 'first_name', 'last_name', 'email', 'password'],
         );
-        if (!user) return res.status(404).json({ message: 'user not found' })
-        return res.status(200).json({ user: user })
-        // 2) La contrasena esta bien?
+        if (!user) return res.status(400).json({ message: 'Invalid credentials' });
 
-        // 3) generar un JWT
+        // 2) ¿La contraseña es la correcta?
+        const isMatch = await Utils.comparePasswords(password, user.password);
+        if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
+
+        // 3) Generar un JWT
+        const token = await Utils.generateToken(user);
+        return res.status(200).json({ token });
+
     } catch (error) {
         return res.status(500).send({ error });
     }
-}
+};
 
 module.exports = {
     create,
