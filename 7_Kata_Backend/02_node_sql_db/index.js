@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,7 +17,9 @@ body
 const { showTime } = require('./middlewares');
 const { verifyToken } = require('./middlewares');
 
-app.get('/', verifyToken, (req, res) => res.status(200).json({ message: "hola mundo" }));
+// despues de la ruta agregamos el metodo
+
+app.get('/', (req, res) => res.status(200).json({ message: "hola mundo" }));
 
 app.use('/api/v1', require('./routers'));
 

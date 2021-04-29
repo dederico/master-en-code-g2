@@ -1,14 +1,14 @@
 // Update with your config settings.
 
 module.exports = {
-
+  // Contiene datos de prueba para hacer todo tipo de experimentos
   development: {
     client: 'postgresql',
     connection: {
-      host: 'queenie.db.elephantsql.com',
-      database: 'gqhuthfx',
-      user: 'gqhuthfx',
-      password: 'R11RNJm3vVHkedkvVJITdk-GKR80-ZL9'
+      host: process.env.DEV_HOST,
+      database: process.env.DEV_DB,
+      user: process.env.DEV_USER,
+      password: process.env.DEV_PASS,
     },
     pool: {
       min: 2,
@@ -18,15 +18,15 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
-  // Contiene una copia exacta o tan exacta como se necesite
 
+  // Contiene una copia exacta (o tan exacta como se necesite) de producción
   staging: {
     client: 'postgresql',
     connection: {
       host: 'queenie.db.elephantsql.com',
-      database: 'gqhuthfx',
-      user: 'gqhuthfx',
-      password: 'R11RNJm3vVHkedkvVJITdk-GKR80-ZL9'
+      database: 'ynrawqbl',
+      user: 'ynrawqbl',
+      password: 'wdK_eX3tlrJQtzyQpw81uHmE9ljaLp5-'
     },
     pool: {
       min: 2,
@@ -37,14 +37,14 @@ module.exports = {
     }
   },
 
-  // Los datos reales de tu negocio
+  // Los datos reales de tu negocio: los datos en producción
   production: {
     client: 'postgresql',
     connection: {
       host: 'queenie.db.elephantsql.com',
-      database: 'gqhuthfx',
-      user: 'gqhuthfx',
-      password: 'R11RNJm3vVHkedkvVJITdk-GKR80-ZL9'
+      database: 'ynrawqbl',
+      user: 'ynrawqbl',
+      password: 'wdK_eX3tlrJQtzyQpw81uHmE9ljaLp5-'
     },
     pool: {
       min: 2,

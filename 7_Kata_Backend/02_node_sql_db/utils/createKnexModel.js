@@ -39,6 +39,13 @@ function createKnexModel(knex, tableName, tableColumns, tableId) {
             .from(tableName)
             .where({ [tableId]: id });
     }
+    // Borrado Físico (destruir)
+    const destroy = (id) => {
+        return knex
+            .del()
+            .from(table)
+            .where({ [tableId]: id });
+    }
 
     return {
         create,
@@ -47,6 +54,7 @@ function createKnexModel(knex, tableName, tableColumns, tableId) {
         findOneById,
         updateOneById,
         deleteOneById,
+        destroy
     }
 
 }

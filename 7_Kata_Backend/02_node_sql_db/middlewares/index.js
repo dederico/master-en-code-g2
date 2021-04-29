@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'mipasswordultrachido';
+const { JWT_SECRET } = process.env.JWT_SECRET
 
 
 module.exports = {
@@ -30,5 +30,8 @@ module.exports = {
     } catch (error) {
       return res.status(500).json({ error: "unauthorized, you must provide Authorization as 'Bearer token'" });
     }
+
   }
+
+
 }
