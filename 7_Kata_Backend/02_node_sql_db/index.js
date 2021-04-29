@@ -13,8 +13,10 @@ body
     "ocupacion":"Estudiante",
 }
 */
+const { showTime } = require('./middlewares');
+const { verifyToken } = require('./middlewares');
 
-app.get('/', (req, res) => res.status(200).json({ message: "hola mundo" }));
+app.get('/', verifyToken, (req, res) => res.status(200).json({ message: "hola mundo" }));
 
 app.use('/api/v1', require('./routers'));
 
