@@ -1,11 +1,12 @@
 {
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "celebrate": "^14.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.4",
-    "pg": "^8.6.0",
-    "dotenv": "^8.2.0"
+    "pg": "^8.6.0"
   },
   "name": "02_node_sql_db",
   "version": "1.0.0",

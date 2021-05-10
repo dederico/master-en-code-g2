@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { verifyToken } = require('../middlewares');
-
+const { verifyToken, checkRole } = require('../middlewares');
 const { UserController } = require('../controllers');
+const { userValidator } = require('../validators')
 
 // Create
 router.post('/users', UserController.create);
@@ -11,7 +11,7 @@ router.post('/users', UserController.create);
 router.get('/users', UserController.findAll);
 
 // Read One
-router.get('/users/:idUser', verifyToken, UserController.findOneById);
+router.get('/users/:idUser', verifyToken, checkRole('CUSTOMER'), UserController.findOneById);
 
 // Update One
 router.patch('/users/:idUser', verifyToken, UserController.updateOneById);

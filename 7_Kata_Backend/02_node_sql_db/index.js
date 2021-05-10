@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const { errors } = require('celebrate');
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +23,7 @@ const { verifyToken } = require('./middlewares');
 app.get('/', (req, res) => res.status(200).json({ message: "hola mundo" }));
 
 app.use('/api/v1', require('./routers'));
-
+app.use(errors());
 console.log('Entorno', process.env.NODE_ENV);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
