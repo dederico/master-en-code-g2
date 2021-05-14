@@ -6,25 +6,15 @@ const { celebrate, Joi, Segments } = require('celebrate');
 module.exports = {
     create: celebrate({
         [Segments.BODY]: Joi.object().keys({
-            first_name: Joi.string()
+            user_name: Joi.string()
                 .alphanum()
                 .required(),
-            last_name: Joi.string()
+            user_email: Joi.string()
                 .alphanum()
                 .required(),
-            email: Joi.string()
-                .email()
+            user_password: Joi.string()
                 .required(),
-            phone: Joi.string(),
-            biography: Joi.string(),
-            password: Joi.string()
-                .required(),
-            role: Joi.string()
-                .valid(ENUM_ROLES.join(',')),
-
-
-
-
+        
         })
     })
 }
