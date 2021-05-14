@@ -18,3 +18,5 @@ module.exports = {
         })
     })
 }
+
+// user_id', 'user_speciality', 'user_level', 'user_last_name', 'user_first_name', 'user_email', 'user_password
