@@ -11,7 +11,7 @@ Skill.findOneByIdWithUser = (idSkill) => {
     return knex
         .select()
         .from(TABLE)
-        .join('Users-Skills', 'Skill.skill_id', '=', 'Users-Skills.skill_id')
+        .join('Users-Skills', 'Skills.skill_id', '=', 'Users-Skills.skill_id')
         .where({
             [TABLE_ID]: idSkill
         })

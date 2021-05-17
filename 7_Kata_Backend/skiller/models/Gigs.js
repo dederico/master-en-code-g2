@@ -11,7 +11,7 @@ Gig.findOneByIdWithUser = (idGig) => {
     return knex
         .select()
         .from(TABLE)
-        .join('Companies', 'Gig.company_id', '=', 'Companies.company_id')
+        .join('Quotes', 'Gigs.gig_id', '=', 'Quotes.gig_id')
         .where({
             [TABLE_ID]: idGig
         })

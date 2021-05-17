@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { Gig } = require('../models');
 
 const create = (req, res) => {
     // const newUser = {
@@ -9,13 +9,13 @@ const create = (req, res) => {
 
     // utilizando knex, insertar el objeto en la base datos
         
-    const newUser = req.body;
+    const newGig = req.body;
 
-    return User
-        .create(newUser)
+    return Gig
+        .create(newGig)
         .then((resDB) => {
             return res.status(200).json({
-                message: 'User created',
+                message: 'Gig created',
                 rental: resDB,
             })
         })
@@ -28,28 +28,28 @@ const create = (req, res) => {
 
 const findAll = async (req, res) => {
     try {
-        const response = await User.findAll();
+        const response = await Gig.findAll();
 
         return res.status(200).json({
-            message: 'Successfully obtained list of users',
+            message: 'Successfully obtained list of gigs',
             response,
         });
     } catch (error) {
         return res.status(500).json({
-            message: 'Error obtaining list of users',
+            message: 'Error obtaining list of gigs',
             error,
         });
     }
 }
 
 const findOneById = async (req, res) => {
-    const { idUser } = req.params;
+    const { idGig } = req.params;
 
     try {
-        const response = await User.findOneByIdWithUser(idUser);
-        if (response.length === 0) return res.status(404).json({ message: "provided User doesn't exist" });
+        const response = await Gig.findOneByIdWithUser(idGig);
+        if (response.length === 0) return res.status(404).json({ message: "provided Gig doesn't exist" });
         return res.status(200).json({
-            message: 'Successfully obtained User by id',
+            message: 'Successfully obtained Gig by id',
             response,
         });
 
@@ -65,7 +65,7 @@ const updateOneById = async (req, res) => {
     const { idUser } = req.params;
 
     try {
-        const response = await User.updateOneById(idUser, req.body);
+        const response = await Gig.updateOneById(idUser, req.body);
         return res.status(200).json({
             message: 'Successfully updated User by id',
             response,
@@ -80,10 +80,10 @@ const updateOneById = async (req, res) => {
 }
 
 const deleteOneById = async (req, res) => {
-    const { idUser } = req.params;
+    const { idGig } = req.params;
 
     try {
-        await User.deleteOneById(idUser);
+        await Gig.deleteOneById(idGig);
         return res.status(204).json();
 
     } catch (error) {
