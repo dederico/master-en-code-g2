@@ -1,4 +1,5 @@
 const { User } = require('../models');
+const Utils = require('../utils');
 
 const create = (req, res) => {
     // const newUser = {
@@ -93,6 +94,30 @@ const deleteOneById = async (req, res) => {
         });
     }
 }
+const login = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        // 1) ¿Está registrado el usuario?
+        const [user] = await User.find(
+            { email: email },
+            ['user_id', 'first_name', 'last_name', 'email', 'password', 'role'],
+        );
+        if (!user) return res.status(400).json({ message: 'Invalid credentials' });
+
+        // 2) ¿La contraseña es la correcta?
+        const isMatch = await Utils.comparePasswords(password, user.password);
+        if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
+
+        // 3) Generar un JWT
+        const token = await Utils.generateToken(user);
+        return res.status(200).json({ token });
+
+    } catch (error) {
+        return res.status(500).send({ error });
+    }
+};
+
 
 module.exports = {
     create,
@@ -100,4 +125,5 @@ module.exports = {
     findOneById,
     updateOneById,
     deleteOneById,
+    login
 }

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { verifyToken, checkRole } = require('../middlewares');
+// const { verifyToken, checkRole } = require('../middlewares');
 const { UserController } = require('../controllers');
 const { userValidator } = require('../validators')
 
@@ -11,13 +11,13 @@ router.post('/users', UserController.create);
 router.get('/users', UserController.findAll);
 
 // Read One
-router.get('/users/:idUser', verifyToken, checkRole('CUSTOMER'), UserController.findOneById);
+router.get('/users/:idUser', UserController.findOneById);
 
 // Update One
-router.patch('/users/:idUser', verifyToken, UserController.updateOneById);
+router.patch('/users/:idUser', UserController.updateOneById);
 
 // Delete One (borrado lógico)
-router.delete('/users/:idUser', verifyToken, UserController.deleteOneById);
+router.delete('/users/:idUser', UserController.deleteOneById);
 
 // Destroy One (borrado físico)
 

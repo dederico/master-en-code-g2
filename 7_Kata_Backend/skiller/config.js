@@ -5,5 +5,5 @@ const knex = require('knex');
 const knexInstance = knex
 
     (knexfile[env]);
-
+console.log(knexfile[env]);
 module.exports = knexInstance;
