@@ -31,8 +31,6 @@ const UserSchema = new mongoose.Schema({
  con la coleccion 'Users'.
 
 **/
-const User = mongoose.model('User', {
-    
-});
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;

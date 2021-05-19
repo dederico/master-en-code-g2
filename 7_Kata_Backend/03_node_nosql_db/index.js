@@ -9,6 +9,9 @@ mongoose.connect(process.env.URL_DE_APP,{useNewUrlParser: true, useUnifiedTopolo
     .then(() => console.log('db connection established'))
     .catch(() => console.log('error connecting'));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/prueba', (req, res) => {
     res.status(200).json({ message: 'success' })
 });
