@@ -1,5 +1,38 @@
-const User = {
+const mongoose = require('mongoose');
+
+const UserSchema = new mongoose.Schema({
+    first_name: {
+        type: String,
+        required: true
+    },
+    last_name: {
+        type: String
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    role: {
+        type: String,
+        default: 'GUEST',
+        enum: ['GUEST','ADMIN'],
+    },
+    profile_pic: {
+        type: String,
+        default: 'https://ca.slack,edge.com'
+    }
+});
+
+/**
+ El modelo es el objeto que nos permite interactuar
+ con una coleccion dadada
+ 
+ en este caso, el modelo 'User' nos permitira interactuar
+ con la coleccion 'Users'.
+
+**/
+const User = mongoose.model('User', {
     
-};
+});
 
 module.exports = User;
