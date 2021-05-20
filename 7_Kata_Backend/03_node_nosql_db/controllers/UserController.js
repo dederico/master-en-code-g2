@@ -10,7 +10,6 @@ module.exports = {
         //const response = await newUser.save();
         try {
             const newUser = User.create(req.body);
-
             res.status(201).json({ message: 'user created successfully' });
         } catch (error) {
              res.status(400).json({ message: 'error creating users' });
