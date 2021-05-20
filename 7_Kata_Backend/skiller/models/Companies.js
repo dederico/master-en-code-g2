@@ -1,7 +1,7 @@
 const knex = require('../config');
 const createKnexModel = require('../utils/createKnexModel');
 
-const TABLE = 'Companies';
+const TABLE = `public."Companies"`;
 const TABLE_COLUMNS = ['company_id', 'company_name', 'company_email', 'company_password'];
 const TABLE_ID = 'company_id';
 
