@@ -15,4 +15,8 @@ router.get('/users/:idUser', UserController.findOne);
 // PUT -> VAMOS A REEMPLAZAR TODO EL OBJETO
 router.patch('/users/:idUser', UserController.update)
 
+// Delete(Logical, One)
+router.delete('./users/:idUser', UserController.delete)
+
+
 module.exports = router;

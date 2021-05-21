@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
     profile_pic: {
         type: String,
         default: 'https://ca.slack,edge.com'
+    },
+    is_active: {
+    type: Boolean,
+        default: true
     }
 });
 

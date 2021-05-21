@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const Item = require('../models/Item')
 
 
 module.exports = {
@@ -6,19 +6,19 @@ module.exports = {
         /** 
          * Opcion 1: Generar una instancia con "new"
         */
-        //const newUser = new User(req.body);
+        //const newUser = new Item(req.body);
         //const response = await newUser.save();
         try {
-            const newUser = User.create(req.body);
-            res.status(201).json({ message: 'user created successfully' });
+            const newUser = Item.create(req.body);
+            res.status(201).json({ message: 'item created successfully' });
         } catch (error) {
             res.status(400).json({ message: 'error creating users' });
         }
     },
     findAll: async (req, res) => {
         try {
-            const users = await User.find({is_active: true});
-            res.status(200).json({ message: 'user list obtained', users });
+            const users = await Item.find({is_active: true});
+            res.status(200).json({ message: 'item list obtained', users });
         } catch (error) {
             res.status(400).json({ message: 'error fetching users', error });
 
@@ -26,9 +26,9 @@ module.exports = {
     },
     findOne: async (req, res) => {
             try {
-                const idUser = req.params.idUser;
-                const user = await User.findById(idUser);
-                return res.status(200).json({ message: 'user found', user })
+                const idItem = req.params.idItem;
+                const item = await Item.findById(idItem);
+                return res.status(200).json({ message: 'item found', item })
             }
             catch (error) {
                 return res.status(500).json({ error });
@@ -36,17 +36,17 @@ module.exports = {
     },
     update: async (req, res) => {
         try {
-            const idUser = req.params.idUser;
-            const user = await User.findByIdAndUpdate(idUser, req.body, { new: true });
-            return res.status(200).json({ message: 'user updated', user: updateUser })
+            const idItem = req.params.idItem;
+            const item = await Item.findByIdAndUpdate(idItem, req.body, { new: true });
+            return res.status(200).json({ message: 'item updated', item: updateUser })
         } catch (error) {
             return res.status(500).json({ error})
         }
     },
     delete: async (req, res) => {
         try {
-            const idUser = req.params.idUser;
-            await User.deleteOne(idUser, {is_active: false}, { new:true });
+            const idItem = req.params.idItem;
+            await Item.deleteOne(idItem, {is_active: false}, { new:true });
             return res.status(204).json()
         } catch (error) {
             return res.status(500).json({ error})
