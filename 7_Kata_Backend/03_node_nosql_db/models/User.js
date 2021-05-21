@@ -26,6 +26,12 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
         default: true
     }
+    }, {
+        collection: 'users',
+        timestamps: {
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+    },
 });
 
 /**
