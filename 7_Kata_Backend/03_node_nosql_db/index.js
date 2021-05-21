@@ -17,6 +17,7 @@ app.get('/prueba', (req, res) => {
 });
 app.use(require('./routers/UserRouter'));
 app.use(require('./routers/ItemRouter'));
+app.use(require('./routers/TicketRouter'));
 
 app.listen(PORT, () => console.log(`It's alive! on ${PORT}`));
 

@@ -37,7 +37,7 @@ module.exports = {
     update: async (req, res) => {
         try {
             const idItem = req.params.idItem;
-            const item = await Item.findByIdAndUpdate(idItem, req.body, { new: true });
+            const item = await Item.findByIdAndUpdate(idUser, req.body, { new: true });
             return res.status(200).json({ message: 'item updated', item: updateUser })
         } catch (error) {
             return res.status(500).json({ error})
