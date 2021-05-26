@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { PostSchema } = require('./Post');
 
 const UserSchema = new mongoose.Schema({
     first_name: {
@@ -26,22 +27,7 @@ const UserSchema = new mongoose.Schema({
     // Endpoints:
     // /user/:idUser/post -> CRUD post
 
-    posts: [{
-        title: {
-            type: String,
-            required: true,
-        },
-        body: {
-            type: String,
-            required: true,
-        },
-        date: {
-            type: Date,
-            default: Date.now(),
-       }
-    }],
-
-    // posts: [PostSchema],
+    posts: [PostSchema],
 
 
     is_active: {
