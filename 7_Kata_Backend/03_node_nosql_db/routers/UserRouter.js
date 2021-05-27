@@ -1,38 +1,42 @@
 const express = require('express');
 const router = express.Router();
-const UserController = require('../controllers/UserController')
+const UserController = require('../controllers/UserController');
 
 // Create
 router.post('/users', UserController.create);
 
-//Read(All)
+// Read (All)
 router.get('/users', UserController.findAll);
 
-// Read(One)
+// Read (One)
 router.get('/users/:idUser', UserController.findOne);
 
-// Update (One)
-// PUT -> VAMOS A REEMPLAZAR TODO EL OBJETO
-router.patch('/users/:idUser', UserController.update);
+// Upddate (One)
+router.patch('/users/:idUser', UserController.updateOne);
 
-// Delete(Logical, One)
-router.delete('./users/:idUser', UserController.delete);
+// Delete (Logical, One)
+router.delete('/users/:idUser', UserController.deleteOne);
 
-// Delete(physical)
+// Delete (Physical, One)
+router.delete('/users/:idUser/destroy', UserController.destroyOne);
 
 /**
- * USER POSTS
+ * User Posts
  */
 
-// CREATE
+// Create
 router.post('/users/:idUser/posts', UserController.createPost);
-// READ ONE
+
+// Read (All)
+router.get('/users/:idUser/posts', UserController.findAllPosts);
+
+// Read (One)
 router.get('/users/:idUser/posts/:idPost', UserController.findOnePost);
 
-// READ ALL
-// UPDATE
-// DELETE
+// Update
+router.patch('/users/:idUser/posts/:idPost', UserController.updateOnePost);
 
-
+// Delete
+router.delete('/users/:idUser/posts/:idPost', UserController.deleteOnePost);
 
 module.exports = router;
