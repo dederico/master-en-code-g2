@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { User } = require('../models/User');
 const { Post } = require('../models/Post');
+const storage = require('../utils/storage');
 
 module.exports = {
   create: async (req, res) => {
@@ -11,6 +12,15 @@ module.exports = {
     // const response = await newUser.save();
 
     try {
+      /**
+       * Si nos mandan un archivo, subimos este archivo
+       * a Firebase, y reemplazamos el archivo del body
+       * por la url del almacenamiento de Firebase
+       */
+      if (req.file) {
+        const url = await storage(req.file);
+        req.body.profile_pic = url;
+      }
       console.log(req.body)
       const newUser = await User.create(req.body);
       /**
@@ -18,8 +28,10 @@ module.exports = {
        * const newUser = new User(req.body);
        * newUser.save();
        */
-      res.status(201).json({ message: 'user created', user: newUser }); 
+      res.status(201).json({ message: 'user created', user: newUser });
     } catch (error) {
+            console.log(error)
+
       res.status(400).json({ message: 'error creating user', error });
     }
   },
