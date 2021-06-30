@@ -5,7 +5,7 @@ const express = require('express');
 const app = express(); // Aplicaion de API 
 const PORT =  process.env.PORT || 4020;
 
-mongoose.connect(process.env.URL_DE_APP,{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://db:27017/mibasededatos',{useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('db connection established'))
     .catch(() => console.log('error connecting'));
 
