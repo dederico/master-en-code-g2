@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-// import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
 import Todos from './components/Todos'
 
 
@@ -11,7 +11,7 @@ function App() {
       <div className="App">
 
         <header className="App-header">
-          {/* <Navbar /> */}
+          <Navbar />
 
           <Todos />
 
