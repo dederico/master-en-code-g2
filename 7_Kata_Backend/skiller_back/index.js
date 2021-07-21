@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const { errors } = require('celebrate');
 
 
@@ -20,7 +20,7 @@ const { verifyToken } = require('./middlewares');
 
 // despues de la ruta agregamos el metodo
 
-app.get('/', (req, res) => res.status(200).json({ message: "hola mundo" }));
+app.get('/', (req, res) => res.status(200).json({ localhost:3000 }));
 
 app.use('/api/v1', require('./routes'));
 app.use(errors());
